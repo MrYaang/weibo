@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 去掉a标签的下滑线 */
+a{
+    text-decoration: none;
+    color: #000000;
+}
+/* 取消li中的小黑点 */
+ul li{
+    list-style: none;
+}
+/* 栅格系统 */
+.grid{
+    /* 把盒子变成弹性盒子 */
+    display: flex;
+}
+.grid-cell-1,
+.grid-cell-2,
+.grid-cell-3,
+.grid-cell-4,
+.grid-cell-5,
+.grid-cell-6{
+    flex-shrink: 1;
+}
+.grid-cell-1{
+    flex-grow: 1;
+}
+.grid-cell-2{
+    flex-grow: 2;
+}
+.grid-cell-3{
+    flex-grow: 3;
+}
+.grid-cell-4{
+    flex-grow: 4;
+}
+.grid-cell-5{
+    flex-grow: 5;
+}
+.grid-cell-6{
+    flex-grow: 6;
+}
+#header{
+    width: 100%;
+    height: 62px;
+    border-bottom: 2px solid #cccccc;
+    /* 阴影效果 */
+    box-shadow: 0 0 5px #cccccc;
+}
+.header-logo{
+    /* 调整外边距 */
+    margin: 10px 10px 0 10px;
+}
+.header-nav ul li{
+    /* 也可以运用浮动，可以向左浮动 */
+    /* 把块状格式转换行 */
+    display: inline-block;
+    line-height: 62px;
+    margin: 0 10px;
+    font-size: 14px;
+}
+#nav--active{
+    color: #2291f7;
+}
+.header-nav ul li:hover{
+    color: #2291f7;
+    /* 给一个过渡效果 */
+    transition: all 400ms linear 0ms;
+}
+.right-box{
+    line-height: 62px;
+}
+.right-box a{
+    /* 把a标签变成行块标签 */
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    /* 给a标签一个边框 */
+    border: 1px solid #2291f7;
+    /* 边框圆角效果 */
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #2291f7;
+}
+.right-box a:hover{
+    background: #f8ebfe;
+    /* 过渡效果 */
+    transition: all 400ms linear 0ms;
+}
+/* 内容区样式 */
+#content{
+    width: 90%;
+    margin: 20px auto;
+}
+.container h1{
+    margin: 12px 0;
+    font-size: 34px;
+    color: #333333;
+}
+.container p{
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+/* 右边推荐栏制作 */
+.hot-new{
+    width: 270px;
+    margin-left: 40px;
+}
+.hot-new h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.news-box{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 260px;
+    border: 1px solid #fff;
+}
+.news-box img{
+    width: 100%;
+}
+.news-box:hover{
+    /* 边线 */
+    border: 1px solid #eee;
+    /* 边框圆角 */
+    border-radius: 5px;
+    /* 过渡效果 */
+    transition: all 400ms linear 0ms;
+}
+.news-box:hover a{
+    color: #2291f7;
+    /* 过渡效果 */
+    transition: all 400ms linear 0ms;
+}
+.news-box dt{
+    width: 260px;
+    /* dt超出框的隐藏 */
+    overflow: hidden;
+}
+.news-box:hover img{
+    /* 转换放大 ,伸缩变换*/
+    transform: scale(1.1);
+    /* 过渡效果 */
+    transition: all 400ms linear 0ms;
+}
+
+/* 返回顶部效果样式 */
+#return-box{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background: #eee;
+    display: block;
+    /* 固定定位 */
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+/* 底部样式 */
+#footer{
+    height: 100px;
+    background: #eee;
+    text-align: center;
+    font-size: 14px;
+}
+/* 底部li块状的样式 */
+#footer ul li{
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+/* 顶部li块的鼠标悬停事件 */
+#footer ul li a:hover{
+    color: #2291f7;
+    transition: all 400ms linear 0ms;
+}
+/* pc端隐藏这个导航栏 */
+.mobile-nav{
+    display: none;
+}
+
+
+/* 媒体查询标签 */
+@media all and (max-width:480px){
+    /* 把右边图文结合的隐藏掉,而且把导航栏隐藏掉 */
+    .header-nav,
+    .hot-new{
+        display: none;
+    }
+    /* 把返回顶部的按钮设置为圆形，用边框圆角占50% */
+    #return-box{
+        border-radius: 50%;
+    }
+    /* 在移动端中显示的导航栏 */
+    .mobile-nav{
+        /* 在移动端则会显示移动端的导航栏 */
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 2px solid #cccccc;
+        font-size: 14px;
+    }
+    /* 独特“要闻”标签中的字体颜色 */
+    #nav--active{
+        color: #2291f7;
+    }
+    .mobile-li{
+        border-bottom: 2px solid #2291f7;
+    }
+}
